@@ -1,0 +1,40 @@
+<div>Search<input type="text" ng-model="search">
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Job Title</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="job in jobs | filter:search">
+<td>
+<a href="" ng-click="getJobById(job.id)">{{job.jobTitle}}</a>
+</td>
+<td>{{job.postedOn | date:'yyyy:MM:dd'}}
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table ng-show="showJobDetails" class="table table-bordered">
+<tr><td>JOB TITLE:</td>
+<td><marquee width="100%" behavior="slide">{{job.jobTitle}}</marquee></td></tr>
+<tr><td>JOB DESCRIPTION:</td>
+<td><marquee width="100%" behavior="slide">{{job.jobDescription}}</marquee></td></tr>
+<tr><td>YEARS OF EXPERIENCE:</td>
+<td><marquee width="100%" behavior="slide">{{job.yearsofexp}}</marquee></td></tr>
+<tr><td>SKILLS REQUIRED:</td>
+<td><marquee width="100%" behavior="slide">{{job.skillsRequired}}</marquee></td></tr>
+<tr><td>LOCATION:</td>
+<td><marquee width="100%" behavior="slide">{{job.location}}</marquee></td></tr>
+<tr><td>SALARY:</td>
+<td><marquee width="100%" behavior="slide">{{job.salary}}</marquee></td></tr>
+<tr><td>COMPANY NAME:</td>
+<td><marquee width="100%" behavior="slide">{{job.companyName}}</marquee></td></tr>
+<tr><td>POSTED ON:</td>
+<td><marquee width="100%" behavior="slide">{{job.postedOn}}</marquee></td></tr>
+
+
+</table>
+
