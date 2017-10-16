@@ -1,0 +1,33 @@
+<h3 style="color:white" align="center"><i>List Of Blogs</i></h3>
+
+<div ng-show="currentUser.role=='ADMIN'">
+<marquee style="position: relative;" width="400" behavior="slide" align="center" direction="up" hspace="35%"
+scrollamount="7" scrolldelay="5">
+<h3><i style="color:white" align="center">List Of Blogs Waiting For Approval</i></h3><br>
+<table class="table table-bordered" width="700">
+<thead><tr><td><h4>BlogPost Title</h4></td><td><h4>Posted On</h4></td></tr></thead>
+<tbody>
+<tr ng-repeat="blogPost in blogPostsWaitingForApproval">
+<td><a href="#/blogpostforapproval/{{blogPost.id}}"><p style="color:white"> {{blogPost.blogTitle}}</p></a></td><td><p style="color:white">{{blogPost.postedOn | date:'MM/dd/yyyy  HH:mm'}}</p></td>
+</tr>
+</tbody>
+</table>
+</marquee>
+</div>
+<div>
+<br><br><br>
+<marquee  style="position: relative;" width="400" behavior="slide" align="center" direction="up" hspace="35%" scrollamount="7" scrolldelay="5">
+
+<h3><i style="color:white" align="center">List Of Blogs Which Are Approved</i></h3>
+<table class="table table-bordered" width="700">
+<thead>
+<tr><td><h4>BlogPost Title</h4></td><td><h4>Posted On</h4></td></tr>
+</thead>
+<tbody>
+<tr ng-repeat="blogPost in blogPostsApproved">
+<td><a href="#/blogpostdetail/{{blogPost.id}}"><p style="color:white">{{blogPost.blogTitle}}</p></a></td><td><p style="color:white">{{blogPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</p></td></tr>
+
+</tbody>
+</table>
+</marquee>
+</div>

@@ -1,0 +1,25 @@
+<style>
+.wrapper{
+    text-align: center;
+}
+</style>
+<br><br>
+<h2 style="color:white" align="center"><i>Post A Blog</i></h2>
+<br><br>
+<table align="center">
+
+<tr><td><h3 style="color:white">Enter BlogTitle</h3></td>
+<td><input type="text" ng-model="blogPost.blogTitle" class="form-control">
+</td></tr>
+<tr><td><h3 style="color:white">Enter Description</h3></td>
+<td><textarea rows="7" cols="20" ng-model="blogPost.description" class="form-control"></textarea>
+</td></tr>
+</table>
+<br><br>
+<div class="wrapper">
+
+<button type="button" class="btn btn-primary btn-lg" ng-click="saveBlogPost()">Add Blog</button>
+
+</div>
+
+
