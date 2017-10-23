@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.body{
+background-image:url('https://www.adu.ac.ae/portals/0/Skins/ADU/support/en-US/img/employment-banner.jpg');
+}
+h2,h4,h3{
+color:white;
+}
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<br><br><br>
+<h2 align="center"><i>List Of Jobs</i></h2>
+<br><br>
+<div align="center"><i style="color:white">Search</i><input type="text" ng-model="search" class="form-control" style="width:300px"">
+<br><br><br><br>
+<table width="400">
+  <tr>
+    <th><h3>Job Title</h3></th>
+    <th><h3>Date</h3></th>
+  </tr>
+  <tr ng-repeat="job in jobs | filter:search">
+<td>
+<a href="" ng-click="getJobById(job.id)"><h4>{{job.jobTitle}}</h4></a>
+</td>
+<td>{{job.postedOn | date:'MM/dd/yyyy  HH:mm'}}
+</td>
+</tr>
+</table>
+</div>
+
+<br><br><br><br>
+<marquee style="position: relative;" behavior="slide" align="center" direction="up" 
+scrollamount="7" scrolldelay="5" onmouseover="this.stop()" onmouseout="this.start()" height="1000">
+<table align="center" ng-show="showJobDetails" width="900">
+<tr><td><h3>JOB TITLE:</h3></td>
+<td><h4>{{job.jobTitle}}</h4></td></tr>
+<tr><td><h3>JOB DESCRIPTION:</h3></td>
+<td><h4>{{job.jobDescription}}</h4></td></tr>
+<tr><td><h3>YEARS OF EXPERIENCE:</h3></td>
+<td><h4>{{job.yearsofexp}}</h4></td></tr>
+<tr><td><h3>SKILLS REQUIRED:</h3></td>
+<td><h4>{{job.skillsRequired}}</h4></td></tr>
+<tr><td><h3>LOCATION:</h3></td>
+<td><h4>{{job.location}}</h4></td></tr>
+<tr><td><h3>SALARY:</h3></td>
+<td><h4>{{job.salary}}</h4></td></tr>
+<tr><td><h3>COMPANY NAME:</h3></td>
+<td><h4>{{job.companyName}}</h4></td></tr>
+<tr><td><h3>POSTED ON:</h3></td>
+<td><h4>{{job.postedOn}}</h4></td></tr>
+</table>
+</marquee>
+

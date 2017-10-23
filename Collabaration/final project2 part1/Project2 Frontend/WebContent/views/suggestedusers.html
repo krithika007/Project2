@@ -1,0 +1,23 @@
+<br><br><br>
+<h2 align="center" style="color:white"  >List Of Friends</h2>
+<br><br>
+<table class="table table-bordered" width="700">
+<thead>
+<tr>
+<th><h3 style="color:white">Firstname</h3></th>
+<th><h3 style="color:white">Lastname</h3></th>
+<th><h3 style="color:white">pic</h3></th>
+<th><h3 style="color:white">FriendRequest</h3></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in suggestedUsers">
+<td><h4 style="color:white">{{user.firstname}}</h4></td><td><h4 style="color:white">{{user.lastname}}</h4></td><td>
+<img src="http://localhost:8080/Project2_Backend/getprofilepic/{{user.username}}" alt="image" height="30px" width="30px"></td>
+<td>
+<a class="btn btn-default" ng-click="sendFriendRequest(user.username)">Send Friend Request</a>
+</td>
+</tr>
+
+</tbody>
+</table>

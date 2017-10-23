@@ -1,0 +1,50 @@
+<style>
+.jumbotron{
+
+opacity:0.7;
+}
+.wrapper{
+    text-align: center;
+}
+span{
+display:inline-block;
+}
+glyphicon glyphicon-thumbs-up{
+text-align:center;
+}
+</style>
+<br><br><br>
+<h3 style="color:white" align="center"><i>Blog Details</i></h3>
+<div class="jumbotron">
+  <h2 align="center"><i>Title:{{blogPost.blogTitle}}</i></h2>      
+  <h3 align="center"><i>Created By:</i></h3>
+  <h4 align="center"><i>{{blogPost.postedBy.username}}</i></h4>
+  <h4 align="center"><i>{{blogPost.postedOn | date:'medium'}}</i></h4>
+<br>
+<h2 align="center"><i>{{blogPost.description}}</i></h2>
+</div>
+<br><br>
+<div align="center">
+<h3 align="center" style="color:white">{{blogPost.likes}} likes</h3>
+<h3 class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" 
+ng-click="updateLikes()" ></h3>
+<ul>
+<li  ng-repeat="blogComment in blogComments | orderBy:'time':'true'">
+<h3 align="center" style="color:white">Comment:{{blogComment.commentText}}</h3>
+<h4 align="center" style="color:white"><span>By: <strong>{{blogComment.commentedBy.username}}</strong></span></h4>
+<h4 align="center" style="color:white"><span style="align:center" style="color:white" >On:<strong>{{blogComment.commentedOn | date:'yyyy/MM/dd'}}</strong></span></h4>
+</li>
+</ul>
+
+<form>
+<div class="form-group" align="center">
+<textarea rows="7" cols="50" ng-model="blogComment.commentText" ></textarea>
+</div>
+<div class="wrapper">
+<br><br>
+<button class="btn btn-default" value="Post Comment" ng-click="addComment()">Post Comment</button>
+</div>
+</form>
+
+
+</div>

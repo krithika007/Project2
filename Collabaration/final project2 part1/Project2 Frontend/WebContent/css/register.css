@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+.container {
+    text-align: center;
+}
+.radio-inline{
+	 display: inline-block;
+	 
+}
+
+.form-group{
+	color:white;
+	font-family:courier;
+	
+}
+h4{
+	
+	color:white;
+	font-family:courier;
+}
+.wrapper{
+    text-align: center;
+}
+
